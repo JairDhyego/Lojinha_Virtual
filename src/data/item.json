@@ -1,0 +1,26 @@
+ [
+    {
+      "id": 1,
+      "name": "Computador",
+      "price": 10.99,
+      "imgUrl": "/imgs/pcGamer.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Monitores",
+      "price": 1199,
+      "imgUrl": "/imgs/monitores.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Teclados",
+      "price": 1.05,
+      "imgUrl": "/imgs/teclados.jpg"
+    },
+    {
+      "id": 4,
+      "name": "placa Mãe",
+      "price": 14000,
+      "imgUrl": "/imgs/placaMae.jpg"
+    }
+  ]
