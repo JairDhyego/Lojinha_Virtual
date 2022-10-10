@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 
 const Home = () => {
+  const [emailValid, setEmailValid] = useState(false);
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  const handleOnChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const emailValidation = (e) => {
+    e.preventDefault();
+    const emailRegex = /\S+@\S+\.\S+/;
+
+    if (emailRegex.test(email)) {
+      setEmailValid(true);
+    } else if (!emailRegex.test(email) && email !== "") {
+      setEmailValid(false);
+    } else {
+      setEmailValid(false);
+    }
+  };
+
   return (
     <div className="containerHome">
       <div className="wrapper">
@@ -19,22 +40,33 @@ const Home = () => {
               <span>X</span>
             </div>
             <div className="group">
-              <label>Usuário</label>
+              <label>Email</label>
               <input
                 className="input"
-                placeholder="Digite sua ID, email ou cpf"
+                name="email"
+                placeholder="Digite seu email"
+                onChange={handleOnChange}
               />
             </div>
 
             <div className="group">
               <label> Senha </label>
-              <input className="input" placeholder="Digite sua senha" />
+              <input
+                name="password"
+                className="input"
+                placeholder="Digite sua senha"
+              />
             </div>
 
             <span>
               Para alterar sua senha <a href="#">clique aqui!</a>
             </span>
-            <button>Entrar</button>
+            <button
+              onClick={emailValidation}
+              className={`${!emailValid ? "block" : ""}`}
+            >
+              Entrar
+            </button>
           </form>
         </div>
       </div>

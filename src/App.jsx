@@ -8,7 +8,7 @@ function App() {
   return (
     <ShoppingCartProvider>
       <Navbar />
-      <Container className="mb-4 containerApp">
+      <Container className="container_app">
         <AppRoutes />
       </Container>
     </ShoppingCartProvider>
